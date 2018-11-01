@@ -1,9 +1,9 @@
 <?php
 
-include_once("conexao2.php");
+include_once ("conexao.php");
 
-$consulta = "SELECT * FROM musicas";
-$con = mysqli-query($consulta) or die($mysqli-error);
+$consulta = "SELECT Nome, Artista,Duracao, Album, Genero FROM musicas";
+$conexao = mysqli-query($consulta) or die($mysqli-error);
 ?>
 
 <!DOCTYPE html>
