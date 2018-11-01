@@ -2,8 +2,8 @@
 
 include_once ("conexao.php");
 
-$consulta = "SELECT Nome, Artista,Duracao, Album, Genero FROM musicas";
-$conexao = mysqli-query($consulta) or die($mysqli-error);
+$consulta = "SELECT * FROM musicas";
+$con = $conexao->query($consulta);
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ $conexao = mysqli-query($consulta) or die($mysqli-error);
 				<td>Status</td>
 				<td>ID da Música</td>
 			</tr>
-			<?php while($dado = $con->fecth_array()){?>
+			<?php while($dado = $con->fetch_assoc()){?>
 			<tr>
 				<td><?php echo $dado ["Nome"];?></td>
 				<td><?php echo $dado ["Artista"];?></td>
