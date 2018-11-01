@@ -2,6 +2,8 @@
 
 include_once("conexao.php");
 
+header("Content-type: text/html; charset=utf-8");
+
 $Nome = $_POST['Nome'];
 $Descricao = $_POST['Descricao'];
 
