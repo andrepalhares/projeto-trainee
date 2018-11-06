@@ -101,6 +101,26 @@
                 echo "<meta http-equiv=\"refresh\" content=\"0; url=editarPlaylist.php?action=editarPlaylist&id_p=".$id_P."\">";
             }
             break;
+        case "deletarPlaylist":
+            $id_P = intval($_POST["id_p"]);
+            $query1 = "UPDATE `pertence` SET `status`= 0 WHERE ID_P = \"".$id_P."\";";
+            $query2 = "UPDATE `playlists` SET `status`= 0 WHERE ID_P = \"".$id_P."\";";
+            $verifica = $conexao->query($query1);
+            if(!$verifica){
+                echo "<script>alert(\"Falha ao deletar músicas relacionadas a playlist.\")</script>";
+                echo "<meta http-equiv=\"refresh\" content=\"0; url=exibirplaylists.php?action=selecionarPlaylistsParaMusica\">";
+            }
+
+            $verifica = $conexao->query($query2);
+            echo $query2;
+            if($verifica){
+                echo "<script>alert(\"Playlist deletada com sucesso.\")</script>";
+                echo "<meta http-equiv=\"refresh\" content=\"0; url=exibirplaylists.php?action=selecionarPlaylistsParaMusica\">";
+            }else{
+                echo "<script>alert(\"Erro ao salvar alterações.\")</script>";
+                echo "<meta http-equiv=\"refresh\" content=\"0; url=exibirplaylists.php?action=selecionarPlaylistsParaMusica\">";
+            }
+            break;
         default:
             break;
         }
