@@ -1,19 +1,22 @@
 <?php
 
-$Nome = filter_input(INPUT_GET, "Nome");
-$Artista = filter_input(INPUT_GET, "Artista");
-$Album = filter_input(INPUT_GET, "Album");
-$Genero = filter_input(INPUT_GET, "Genero");
-$Duracao = filter_input(INPUT_GET, "Duracao");
-$status = filter_input(INPUT_GET, "status");
-$ID_M = filter_input(INPUT_GET, "ID_M");
+include_once("conexao.php");
 
-$link = mysqli_connect("localhost", "root", "", "bancodedados")
+header("Content-type: text/html; charset=utf-8");
 
-if($link){
-	$query = mysqli_query($link, "update musicas set Nome='$Nome', Artista='$Artista', Album='Album', Genero='Genero', Duracao='Duracao', status='status', where id = '$id';");
-}else{
-	die ("Error: " .mysqli_error($link));
-}
+$ID_M = $_POST['ID_M'];
+$Nome = $_POST['Nome'];
+$Duracao = $_POST['Duracao'];
+$Genero = $_POST['Genero'];
+$Album = $_POST['Album'];
+$Artista = $_POST['Artista'];
+$status = $_POST['status'];
+
+$sql = "UPDATE `musicas` SET `Nome`='".$Nome."',`Duracao`='00:".$Duracao."',`Genero`='".$Genero."',`Album`='".$Album."',`Artista`='".$Artista."',`status`='".$status."' WHERE `ID_M` = $ID_M;";
+$salvar = $conexao->query($sql);
+echo $sql;
+
+$conexao->close();
+
 
 ?>
