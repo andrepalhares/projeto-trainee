@@ -34,7 +34,7 @@
                 <a class="nav-link" href="adicionarMusica.php">ADICIONAR MÚSICA</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Pagina_Playlist.php">ADICIONAR PLAYLIST</a>
+                <a class="nav-link" href="Pagina Playlist.php">ADICIONAR PLAYLIST</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="Exibir_musicas.php">LISTAR MÚSICAS</a>
@@ -46,11 +46,11 @@
             echo "<h1>".$playlist["Nome"]."</h1><p>Descrição:</br>".$playlist["Descricao"]."</p>";
         ?>
         <h1>Músicas</h1>
+
         <table class="table">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col" class="col1">Nome</th>
-                    <th scope="col" class="col3">Exibir</th>
                     <th scope="col" class="col3">Editar</th>
                     <th scope="col" class="col3">Deletar</th>
                     <th scope="col" class="col3">Adicionar</th>
@@ -60,7 +60,7 @@
             <?php
             if(isset($musicasPlaylist)){
                 foreach ($musicasPlaylist as $m) {
-                    echo "<tr><td>".$m["Nome"]."</td>><td><a href=\"exibirMusica.php?action=exibirMusica&id_m=".$m["ID_M"]."\"><input class=\"btn btn-info\" type=\"button\" value=\"Exibir\"></input></a></td><td><a href=\"editarMusica.php?action=alteracao.html&id_m=".$m["ID_M"]."\"><input class=\"btn btn-info\" type=\"button\" value=\"Editar\"></input></a></td><td> <input class=\"btn btn-danger\" type=\"button\" onclick=\"confirmarDelete(".$m["ID_M"].",".$playlist["ID_P"].")\"value=\"Deletar\"></input></td><td><a href=\"adicionarMusicaPlaylist.php?action=selecionarPlaylistsParaMusica&id_m=".$m["ID_M"]."\"><input class=\"btn btn-info\" type=\"button\" value=\"Adicionar\"></input></a></td></tr>";
+                    echo "<tr><td>".$m["Nome"]."</td><td><a href=\"alteracao.php?id_m=".$m["ID_M"]."\"><input class=\"btn btn-info\" type=\"button\" value=\"Editar\"></input></a></td><td> <input class=\"btn btn-danger\" type=\"button\" onclick=\"confirmarDelete(".$m["ID_M"].",".$playlist["ID_P"].")\"value=\"Deletar\"></input></td><td><a href=\"adicionarMusicaPlaylist.php?action=selecionarPlaylistsParaMusica&id_m=".$m["ID_M"]."\"><input class=\"btn btn-info\" type=\"button\" value=\"Adicionar\"></input></a></td></tr>";
                 }
             }
              ?>
