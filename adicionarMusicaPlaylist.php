@@ -30,7 +30,7 @@
                 <a class="nav-link" href="adicionarMusica.php">ADICIONAR MÚSICA</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Pagina_Playlist.php">ADICIONAR PLAYLIST</a>
+                <a class="nav-link" href="Pagina Playlist.php">ADICIONAR PLAYLIST</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="Exibir_musicas.php">LISTAR MÚSICAS</a>
