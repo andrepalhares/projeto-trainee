@@ -11,7 +11,7 @@
 	<body>
 		<script>
 	        function confirmarDelete(m){
-	            if(confirm("Deseja realmente deletar essa playlist?")){
+	            if(confirm("Deseja realmente deletar essa música?")){
 	                window.location.href = 'deletarMusica.php?id_m='+m;
 	            }
 	        }
