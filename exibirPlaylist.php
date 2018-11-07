@@ -7,24 +7,18 @@
     ?>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="estilo.css">
-    <style>
-        form{
-            width: 55%;
-            margin: 10px auto;
-            border: 1px solid rgba(0,0,0,.2);
-            border-radius: 3%;
-            padding: 15px;
-        }
-    </style>
+
 </head>
 <body>
+
     <script>
-        function confirmarDelete(m, p){
+        function confirmarDelete(n){
             if(confirm("Deseja realmente deletar essa playlist?")){
-                window.location.href = 'exibirPlaylist.php?action=deletarMusicaPlaylist&id_m='+m+'&id_p='+p;
+                window.location.href = 'exibirPlaylist.php?action=deletarPlaylist&id_p='+n;
             }
         }
     </script>
+
     <nav >
         <ul class="nav justify-content-center">
             <li class="nav-item">
@@ -41,32 +35,27 @@
             </li>
         </ul>
     </nav>
-    <div class="playlists">
-        <?php
-            echo "<h1>".$playlist["Nome"]."</h1><p>Descrição:</br>".$playlist["Descricao"]."</p>";
-        ?>
-        <h1>Músicas</h1>
 
+    <div class="playlists">
+        <h1>Playlists</h1>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col" class="col1">Nome</th>
+                    <th scope="col" class="col2">Descrição</th>
+                    <th scope="col" class="col3">Exibir</th>
                     <th scope="col" class="col3">Editar</th>
                     <th scope="col" class="col3">Deletar</th>
-                    <th scope="col" class="col3">Adicionar</th>
                 </tr>
             </thead>
             <tbody>
             <?php
-            if(isset($musicasPlaylist)){
-                foreach ($musicasPlaylist as $m) {
-                    echo "<tr><td>".$m["Nome"]."</td><td><a href=\"alteracao.php?id_m=".$m["ID_M"]."\"><input class=\"btn btn-info\" type=\"button\" value=\"Editar\"></input></a></td><td> <input class=\"btn btn-danger\" type=\"button\" onclick=\"confirmarDelete(".$m["ID_M"].",".$playlist["ID_P"].")\"value=\"Deletar\"></input></td><td><a href=\"adicionarMusicaPlaylist.php?action=selecionarPlaylistsParaMusica&id_m=".$m["ID_M"]."\"><input class=\"btn btn-info\" type=\"button\" value=\"Adicionar\"></input></a></td></tr>";
+                foreach ($playlists as $p) {
+                    echo "<tr><td>".$p["Nome"]."</td><td>".$p["Descricao"]."</td><td><a href=\"exibirPlaylist.php?action=exibirPlaylist&id_p=".$p["ID_P"]."\"><input class=\"btn btn-info\" type=\"button\" value=\"Exibir\"></input></a></td><td><a href=\"editarPlaylist.php?action=editarPlaylist&id_p=".$p["ID_P"]."\"><input class=\"btn btn-info\" type=\"button\" value=\"Editar\"></input></a></td><td><input onclick=\"confirmarDelete(".$p["ID_P"].")\" class=\"btn btn-danger\" type=\"button\" value=\"Deletar\"></input></a></td></tr>";
                 }
-            }
              ?>
          </tbody>
         </table>
-        <a href="exibirplaylists.php?action=selecionarPlaylistsParaMusica"><input class="btn btn-info" type="button" value="Voltar"></input></a>
     </div>
 </body>
 </html>
