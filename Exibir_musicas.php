@@ -30,8 +30,8 @@
 	</header>
 			<div class="margem">
 			<h3>Músicas</h3>
-		<table id="corpo" class="table table-dark">
-			<thead>
+		<table id="corpo" class="table">
+			<thead class="thead-dark">
 			<tr>
 				<th scope="col"><h6>Nome</h6></th>
 				<th scope="col"><h6>Nome</h6></th>
@@ -44,10 +44,9 @@
 				<th scope="col"><h6>Deletar</h6></th>
 			</tr>
 			</thead>
-		</table>
+
 			<?php  $numero=0; ?>
 			<?php while($dado = $con->fetch_assoc()){ $numero++;?>
-			<table class="table">
 			<tr>
 				<th scope="row"><?php  echo $numero     ?>
 				<td><?php echo $dado["Nome"];?></td>
@@ -59,10 +58,9 @@
 				<td><?php echo "<a href=\"1adicionarMusicaPlaylist.php?action=selecionarPlaylistsParaMusica&id_m=".$dado["ID_M"]."\"><input type=\"button\" value=\"Adicionar\" class=\"btn btn-info\"></input></a>"?></td>
 				<td><?php echo "<input type=\"button\" onclick=\"confirmarDelete(".$dado["ID_M"].")\"value=\"Deletar\" class=\"btn btn-danger\"></input>"?></td>
 			</tr>
-			</thead>
-		</table>
+		
 			<?php } ?>
-
+			</table>
 			</div>
 	</body>
 </html>
