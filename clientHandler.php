@@ -53,7 +53,7 @@
                 $query = "INSERT INTO pertence (ID_P, ID_M) VALUES ($id_P,$id_M);";
                 $verifica = $conexao->query($query);
                 echo "<script>alert(\"Adicionada com sucesso.\")</script>";
-                echo "<meta http-equiv=\"refresh\" content=\"0; url=exibirmusicas.php\">";
+                echo "<meta http-equiv=\"refresh\" content=\"0; url=Exibir_musicas.php\">";
             }
 
             $query = "SELECT * FROM musicas WHERE ID_M = ".$id_M.";";
