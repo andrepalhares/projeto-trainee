@@ -38,7 +38,7 @@
 				<td><?php echo $dado["status"];?></td>
 				<td><?php echo $dado["ID_M"];?></td>
 				<td><?php echo "<a href=\"alteracao.php?id_m=".$dado["ID_M"]."\"><input type=\"submit\" value=\"Editar\" class=\"btn\"></input></a>"?></td>
-				<td><?php echo "<a href=\"1adicionarMusicaPlaylist.php?action=selecionarPlaylistsParaMusica&id_m=".$dado["ID_M"]."\"><input type=\"button\" value=\"Adicionar\"></input></a>"?></td>
+				<td><?php echo "<a href=\"adicionarMusicaPlaylist.php?action=selecionarPlaylistsParaMusica&id_m=".$dado["ID_M"]."\"><input type=\"button\" value=\"Adicionar\"></input></a>"?></td>
 				<td><?php echo "<input type=\"button\" onclick=\"confirmarDelete(".$dado["ID_M"].")\"value=\"Deletar\"></input>"?></td>
 			</tr>
 			<?php } ?>
