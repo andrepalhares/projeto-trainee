@@ -10,9 +10,9 @@
 	<header>
 		<nav class="menu">
 			<ul>
-				<li><a href="Inicial.html">Inicio</a></li>
+				<li><a href="Inicial.php">Inicio</a></li>
 				<li><a href="exibirPlaylist.html">Adicionar Musica</a></li>
-				<li><a href="exibirPlaylist.html">Adicionar Playlist</a></li>
+				<li><a href="Pagina Playlist.html">Adicionar Playlist</a></li>
 				<li><a href="Exibir_musicas.php">Listar Musica</a></li>
 			</ul>
 		</nav>
