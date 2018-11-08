@@ -21,20 +21,13 @@ $conexao->close();
 <html>
 
 <head>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="estilo.css"/>	
 	<title>Adicionar Playlist</title>
 </head>
 <body>
-		<header>
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="estilo1.css"/>
-		<nav class="menu">
-			<ul>
-				<li><a href="Index.php">Inicio</a></li>
-				<li><a href="adicionarMusica.php">Adicionar Musica</a></li>
-				<li><a href="Pagina Playlsit.php">Adicionar Playlist</a></li>
-				<li><a href="Exibir_musicas.php">Listar Musica</a></li>
-			</ul>
-		</nav>
+	<header>
+		<?php require_once('menu.php')?>
 	</header>
 <div class="formulario">
 		
