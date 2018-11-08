@@ -1,0 +1,33 @@
+body{
+font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+
+}
+
+
+header nav ul{
+	list-style: none;
+	text-align: center;
+	padding: 10px;
+	background-color: #212529;
+	vertical-align: center;
+}
+header nav ul li{
+	display: inline-block;
+	margin-right: 10px;
+}
+header nav ul li a{
+	color: white;
+	text-decoration: none;
+}
+header nav ul li a:hover{
+	background-color: white;
+	color: #212529;
+}
+
+nav ul li{
+	padding: 20px;
+}
+
+.formulario{
+	padding: 50px;
+}
